@@ -1,0 +1,24 @@
+<form class="mb-4" (ngSubmit)="onSubmit(form)" #form="ngForm">
+  <div class="alert alert-danger" role="alert" *ngIf="name.touched && name.invalid">please enter name !!</div>
+  <div class="form-group">
+    <label for="name">Character Name</label>
+    <input type="text"
+           id="name"
+           name="name"
+           class="form-control"
+           #name="ngModel"
+           ngModel
+           required>
+  </div>
+<div class="form-group">
+    <label for="side">Choose Side</label>
+    <select name="side"
+            id="side"
+            class="form-control"
+            #side="ngModel"
+            ngModel>
+      <option *ngFor="let opt of avialbleSides"  [value]="opt.value">{{opt.display}}</option>
+    </select>
+   </div>
+  <button class="btn btn-primary" [disabled]="form.invalid" type="submit">Add character</button>
+</form>

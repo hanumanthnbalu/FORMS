@@ -1,0 +1,13 @@
+input.ng-touched.ng-invalid,
+select.ng-touched.ng-invalid {
+	border: 1px solid red;
+}
+.userData {
+	padding: 5px;
+	text-align: center;
+	background: rgba(210, 114, 114, 0.5);
+	border-radius: 5px;
+	border: 2px solid #cdcdcd;
+	color: rgb(255, 0, 0);
+	transition: all 15s ease-out;
+}

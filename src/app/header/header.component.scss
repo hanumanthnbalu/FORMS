@@ -1,0 +1,13 @@
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  text-transform: uppercase;
+}
+
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show > .nav-link {
+	color: rgb(112, 163, 252) !important;
+  border: 1px solid;
+  text-transform: uppercase;
+}
