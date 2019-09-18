@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 })
 export class TempDrivenFormComponent implements OnInit {
   @ViewChild('f') signupForm: NgForm;
-  genders = ['male','female', 'others'];
+  genders = ['Male', 'Female', 'Others'];
 
   constructor() { }
 
@@ -18,6 +18,6 @@ export class TempDrivenFormComponent implements OnInit {
   //    console.log('SUBMITTED: ', form.value);
   //  }
   onSubmit() {
-    console.log('SUBMITTED: ', this.signupForm);
+    console.log('TEMPLATE DRIVEN FORM: ', this.signupForm);
   }
 }
