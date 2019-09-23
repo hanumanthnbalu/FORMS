@@ -13,8 +13,9 @@ import { StarWarsService } from './star-wars.service';
 import { LogService } from './log.service';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TempDrivenFormComponent } from './temp-driven-form/temp-driven-form.component';
-import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { TempDrivenFormComponent } from './forms/temp-driven-form/temp-driven-form.component';
+import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
+// import { FormRoutingModule } from './forms/formsrouting.module';
 
 @NgModule({
 	declarations: [
@@ -23,9 +24,9 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 		ListComponent,
 		ItemComponent,
 		HeaderComponent,
-		NotFoundComponent,
-		TempDrivenFormComponent,
-		ReactiveFormComponent
+    NotFoundComponent,
+    TempDrivenFormComponent,
+    ReactiveFormComponent
 	],
   imports: [ BrowserModule,
              FormsModule,

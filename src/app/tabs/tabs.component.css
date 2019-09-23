@@ -1,10 +1,10 @@
 a,
 a:hover {
-  cursor: pointer;
-  text-decoration: none;
+	cursor: pointer;
+	text-decoration: none;
 }
 a.nav-link.active {
-  color: blue !important;
-  background: lightblue !important;
-  border: 2px solid #0400ff;
+	color: blue !important;
+	background: lightblue !important;
+	border: 2px solid #0400ff;
 }

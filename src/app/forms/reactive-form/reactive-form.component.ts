@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { StarWarsService } from 'src/app/star-wars.service';
+import * as alertify from 'alertifyjs';
 
 @Component({
   selector: 'app-reactive-form',
@@ -11,8 +13,9 @@ export class ReactiveFormComponent implements OnInit {
   genders = ['Male', 'Female', 'Others'];
   signupForm: FormGroup;
   forbiddenUsername = ['hanumanthnbalu', 'HANUMANTHNBALU', 'HANUMANTH'];
-  constructor() { }
+  constructor(public starWarService: StarWarsService) { }
   ngOnInit() {
+
     this.signupForm = new FormGroup({
       username: new FormControl('', [ Validators.required,
                                       Validators.minLength(3),
@@ -21,9 +24,13 @@ export class ReactiveFormComponent implements OnInit {
       gender: new FormControl('Male'),
       hobbies: new FormArray([])
     });
+    this.signupForm.statusChanges.subscribe((status) => console.log(status));
   }
   onSubmit() {
     console.log('REACTIVE FORM: ', this.signupForm);
+    alertify.success('res.message');
+    // this.starWarService.createUser(this.signupForm.value).subscribe(res => alert(res.message))
+    this.signupForm.reset();
   }
   onAddHobbies() {
     const control = new FormControl('', Validators.required);

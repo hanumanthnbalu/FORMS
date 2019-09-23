@@ -2,11 +2,24 @@
 input.ng-valid {
 	border-left: 5px solid #42a948;
 }
-// input.ng-invalid:not(form) {
-// 	border-left: 5px solid #a94442;
-// }
 .form-control:focus {
 	outline: none;
 	border-color: none;
 	box-shadow: none;
+}
+.btn-primary.disabled,
+.btn-primary:disabled {
+	cursor: not-allowed;
+}
+.collapse:not(.show) {
+	display: block !important;
+}
+input[type='radio'] {
+	margin-right: 5px;
+}
+label {
+	margin-bottom: .5rem;
+	display: flex !important;
+	flex-direction: row;
+	align-items: center;
 }

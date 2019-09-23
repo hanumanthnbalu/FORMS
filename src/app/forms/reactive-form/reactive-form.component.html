@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-10 offset-md-2 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <h1 class="text-center"><u>REACTIVE FORMS</u></h1>
       <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
@@ -30,6 +30,9 @@
             <div *ngIf="signupForm.get('email').errors['required']">
               E-mail is required.
             </div>
+            <div *ngIf="signupForm.get('email').pending">
+              Validating.....
+            </div>
             <div *ngIf="signupForm.get('email').errors['emailIsForbidden']">
               E-mail cannot be (test@test.com).
             </div>
@@ -43,17 +46,20 @@
         <div formArrayName="hobbies">
           <h4>Add Your Hobbies.</h4>
           <div class="form-group" *ngFor="let hobbyControl of signupForm.get('hobbies').controls; let i = index">
-            <div class="row">
-              <input type="text" class="col-md-11 form-control" [formControlName]="i">
-              <div class="col-md-1">
-                <button (click)="removeHobbies((signupForm.get('hobbies').controls), i)"
-                  class="float-right btn btn-secondary">X</button>
+            <div class="row" style="margin: 0">
+              <div class="input-group">
+                <input type="text" class="col-md-10 form-control" [formControlName]="i">
+                <div class="input-group-append">
+                  <span class="input-group-text">
+                    <span (click)="removeHobbies((signupForm.get('hobbies').controls), i)"
+                      class="text-danger">X</span></span>
+                </div>
               </div>
             </div>
           </div>
           <button class="btn btn-dark" type="button" (click)="onAddHobbies()">Add Hobbies</button>
         </div><br>
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit" [disabled]="signupForm.invalid">Submit</button>
       </form>
     </div>
   </div>
