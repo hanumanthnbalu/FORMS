@@ -15,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TempDrivenFormComponent } from './forms/temp-driven-form/temp-driven-form.component';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
+import { ArrayformsComponent } from './forms/arrayforms/arrayforms.component';
 // import { FormRoutingModule } from './forms/formsrouting.module';
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.compo
 		ItemComponent,
 		HeaderComponent,
     NotFoundComponent,
+    ArrayformsComponent,
     TempDrivenFormComponent,
     ReactiveFormComponent
 	],

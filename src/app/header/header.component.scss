@@ -1,23 +1,8 @@
-.navbar-light .navbar-nav .nav-link {
-	color: white;
-	text-transform: uppercase;
-}
-
-.navbar-light .navbar-nav .active > .nav-link,
-.navbar-light .navbar-nav .nav-link.active,
-.navbar-light .navbar-nav .nav-link.show,
-.navbar-light .navbar-nav .show > .nav-link {
-	color: rgb(112, 163, 252) !important;
-	border: 1px solid;
-	text-transform: uppercase;
-}
-@media screen and(min-width:768px) {
-	.navbar {
-		height: 100vh !important;
-		width: 250px;
-		position: fixed;
-	}
-}
-.navbar-expand-lg .navbar-nav {
+ul.navbar-nav.mr-auto.list-unstyled {
+	display: flex;
 	flex-direction: column;
+	height: 100vh;
+	justify-content: center;
+	background: #b4abab;
+	padding: 20px;
 }
